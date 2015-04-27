@@ -1,8 +1,9 @@
 package infb.triangle;
+
 import java.util.Arrays;
 import java.util.List;
 
-public class Triangle implements Comparable<Triangle> {
+public class Triangle {
 	private Character[] nodes = new Character[3];
 
 	public Character[] getNodes() {
@@ -22,14 +23,19 @@ public class Triangle implements Comparable<Triangle> {
 	public String toString() {
 		return Arrays.asList(nodes).toString();
 	}
+
 	@Override
-	public int compareTo(Triangle arg0) {
-		int equalsCounter = 0;
-		for (int i = 0; i < getNodes().length; i++) {
-			if (arg0.contains(getNodes()[i])) {
-				equalsCounter = equalsCounter + 1;
+	public boolean equals(Object obj) {
+		if (obj instanceof Triangle) {
+			Triangle arg0 = (Triangle) obj;
+			int equalsCounter = 0;
+			for (int i = 0; i < getNodes().length; i++) {
+				if (arg0.contains(getNodes()[i])) {
+					equalsCounter = equalsCounter + 1;
+				}
 			}
+			return equalsCounter == 3;
 		}
-		return equalsCounter == 3 ? 0 : -1;
+		return super.equals(obj);
 	}
 }
