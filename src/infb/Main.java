@@ -1,6 +1,8 @@
 package infb;
 
-import static infb.triangle.CountTriangle.*;
+import static infb.triangle.CountTriangle.countShapes;
+import static infb.triangle.CountTriangle.countTriangle;
+import static infb.triangle.CountTriangle.countTriangleByMatrix;
 import infb.triangle.CountTriangle;
 import infb.triangle.Triangle;
 
@@ -10,7 +12,8 @@ public class Main {
 	public static void main(String[] args) {
 		Graph g = new Graph();
 		g.inflateAlphabetically(6);
-		CountTriangle.k = 4;
+		g.initCompleteMatrix();
+		CountTriangle.k = 3;
 
 		System.out.println("generate graph with: " + g.toString());
 
@@ -20,16 +23,8 @@ public class Main {
 				+ triangles.size());
 		System.out.println("count by formular: " + countShapes(g.size()));
 		System.out.println("count by matrix:  " + countTriangleByMatrix(g));
-	}
 
-	private static void testWithSequence(int lesserBound, int upperBound) {
-		for (int i = lesserBound; i <= upperBound; i++) {
-			Graph g = new Graph();
-			g.inflateAlphabetically(i);
-			List<Triangle> triangles = countTriangle(g);
-			System.out.println("graph: " + g);
-			System.out.println("count: " + triangles.size() + " elements: "
-					+ triangles);
-		}
+		System.out.println("custom non-complete graph: "
+				+ countTriangleByMatrix(new CustomGraph()));
 	}
 }

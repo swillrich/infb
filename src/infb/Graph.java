@@ -1,13 +1,12 @@
 package infb;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Graph extends ArrayList<Character> {
 
 	private boolean[][] matrix;
 
-	public void initMatrix() {
+	public void initCompleteMatrix() {
 		this.matrix = new boolean[size()][size()];
 		for (int i = 0; i < size(); i++) {
 			for (int j = 0; j < size(); j++) {
@@ -20,6 +19,10 @@ public class Graph extends ArrayList<Character> {
 
 	public boolean[][] getMatrix() {
 		return matrix;
+	}
+
+	public void setMatrix(boolean[][] matrix) {
+		this.matrix = matrix;
 	}
 
 	public void printMatrix() {
@@ -44,5 +47,15 @@ public class Graph extends ArrayList<Character> {
 			char node = (char) i;
 			add(node);
 		}
+	}
+
+	protected boolean[][] transform(int[][] customMatrix) {
+		boolean[][] matrix = new boolean[customMatrix.length][customMatrix.length];
+		for (int i = 0; i < customMatrix.length; i++) {
+			for (int j = 0; j < customMatrix.length; j++) {
+				matrix[i][j] = customMatrix[i][j] == 0 ? false : true;
+			}
+		}
+		return matrix;
 	}
 }

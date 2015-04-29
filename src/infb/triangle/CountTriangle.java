@@ -38,8 +38,6 @@ public class CountTriangle {
 	}
 
 	public static int countTriangleByMatrix(Graph g) {
-
-		g.initMatrix();
 		g.printMatrix();
 
 		int counter = 0;
