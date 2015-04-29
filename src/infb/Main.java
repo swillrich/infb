@@ -1,7 +1,7 @@
 package infb;
 
-import static infb.triangle.CountTriangle.countTriangle;
-import static infb.triangle.CountTriangle.countTriangleByMatrix;
+import static infb.triangle.CountTriangle.*;
+import infb.triangle.CountTriangle;
 import infb.triangle.Triangle;
 
 import java.util.List;
@@ -9,14 +9,16 @@ import java.util.List;
 public class Main {
 	public static void main(String[] args) {
 		Graph g = new Graph();
-		g.inflateAlphabetically(5);
+		g.inflateAlphabetically(6);
+		CountTriangle.k = 4;
 
 		System.out.println("generate graph with: " + g.toString());
 
 		List<Triangle> triangles = countTriangle(g);
 		System.out.println("triangle elements by duplicates: " + triangles);
-		System.out.println("triangle elements by duplicates, size: " + triangles.size());
-		System.out.println("count by formular: " + countTriangle(g.size()));
+		System.out.println("triangle elements by duplicates, size: "
+				+ triangles.size());
+		System.out.println("count by formular: " + countShapes(g.size()));
 		System.out.println("count by matrix:  " + countTriangleByMatrix(g));
 	}
 

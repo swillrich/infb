@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CountTriangle {
+
+	public static int k = 3;
+
 	public static List<Triangle> countTriangle(Graph g) {
 		List<Triangle> triangles = new ArrayList<Triangle>() {
 			@Override
@@ -43,12 +46,10 @@ public class CountTriangle {
 
 		boolean[][] matrix = g.getMatrix();
 
-		int tmpTriangleCounter = 0;
-
 		for (int i = 0; i < g.size(); i++) {
-			counter += searchInto(matrix, i, tmpTriangleCounter, i);
+			counter += searchInto(matrix, i, 0, i);
 		}
-		
+
 		return counter;
 	}
 
@@ -59,7 +60,7 @@ public class CountTriangle {
 			if (matrix[startRow][j]) {
 				counter += searchInto(matrix, j, tmpTriangleCounter + 1, ref);
 			}
-			if (tmpTriangleCounter == 2) {
+			if (tmpTriangleCounter == k - 1) {
 				if (matrix[startRow][ref]) {
 					return 1;
 				}
@@ -68,8 +69,8 @@ public class CountTriangle {
 		return counter;
 	}
 
-	public static int countTriangle(int n) {
-		double result = factorial(n) / (factorial(3) * factorial(n - 3));
+	public static int countShapes(int n) {
+		double result = factorial(n) / (factorial(k) * factorial(n - k));
 		return (int) result;
 	}
 
