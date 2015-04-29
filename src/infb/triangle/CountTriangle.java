@@ -34,6 +34,33 @@ public class CountTriangle {
 		return triangles;
 	}
 
+	public static int countTriangleByMatrix(Graph g) {
+
+		g.initMatrix();
+		g.printMatrix();
+
+		int counter = 0;
+
+		boolean[][] matrix = g.getMatrix();
+
+		for (int i = 0; i < g.size(); i++) {
+			int currentRow = i;
+			int tmpTriangleCounter = 0;
+			for (int j = currentRow; j < g.size(); j++) {
+				if (matrix[currentRow][j]) {
+					tmpTriangleCounter = tmpTriangleCounter + 1;
+					currentRow = j;
+				}
+				if (tmpTriangleCounter == 2) {
+					if (matrix[currentRow][i]) {
+						counter = counter + 1;
+					}
+				}
+			}
+		}
+		return counter;
+	}
+
 	public static int countTriangle(int n) {
 		double result = factorial(n) / (factorial(3) * factorial(n - 3));
 		return (int) result;
