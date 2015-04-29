@@ -43,18 +43,25 @@ public class CountTriangle {
 
 		boolean[][] matrix = g.getMatrix();
 
+		int tmpTriangleCounter = 0;
+
 		for (int i = 0; i < g.size(); i++) {
-			int currentRow = i;
-			int tmpTriangleCounter = 0;
-			for (int j = currentRow; j < g.size(); j++) {
-				if (matrix[currentRow][j]) {
-					tmpTriangleCounter = tmpTriangleCounter + 1;
-					currentRow = j;
-				}
-				if (tmpTriangleCounter == 2) {
-					if (matrix[currentRow][i]) {
-						counter = counter + 1;
-					}
+			counter += searchInto(matrix, i, tmpTriangleCounter, i);
+		}
+		
+		return counter;
+	}
+
+	private static int searchInto(boolean[][] matrix, int startRow,
+			int tmpTriangleCounter, int ref) {
+		int counter = 0;
+		for (int j = startRow; j < matrix.length; j++) {
+			if (matrix[startRow][j]) {
+				counter += searchInto(matrix, j, tmpTriangleCounter + 1, ref);
+			}
+			if (tmpTriangleCounter == 2) {
+				if (matrix[startRow][ref]) {
+					return 1;
 				}
 			}
 		}
