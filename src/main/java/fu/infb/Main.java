@@ -1,10 +1,10 @@
-package infb;
+package fu.infb;
 
-import static infb.triangle.CountTriangle.countShapes;
-import static infb.triangle.CountTriangle.countTriangle;
-import static infb.triangle.CountTriangle.countTriangleByMatrix;
-import infb.triangle.CountTriangle;
-import infb.triangle.Triangle;
+import static fu.infb.triangle.CountTriangle.countShapes;
+import static fu.infb.triangle.CountTriangle.countTriangle;
+import static fu.infb.triangle.CountTriangle.countTriangleByMatrix;
+import fu.infb.triangle.CountTriangle;
+import fu.infb.triangle.Triangle;
 
 import java.util.List;
 

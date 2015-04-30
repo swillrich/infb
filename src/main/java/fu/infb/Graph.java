@@ -1,4 +1,4 @@
-package infb;
+package fu.infb;
 
 import java.util.ArrayList;
 

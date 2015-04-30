@@ -1,4 +1,4 @@
-package infb.triangle;
+package fu.infb.triangle;
 
 import java.util.Arrays;
 import java.util.List;

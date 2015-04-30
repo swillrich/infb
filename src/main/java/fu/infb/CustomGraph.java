@@ -1,4 +1,4 @@
-package infb;
+package fu.infb;
 
 public class CustomGraph extends Graph {
 	public CustomGraph() {

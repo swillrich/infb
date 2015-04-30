@@ -1,6 +1,6 @@
-package infb.triangle;
+package fu.infb.triangle;
 
-import infb.Graph;
+import fu.infb.Graph;
 
 import java.util.ArrayList;
 import java.util.List;
