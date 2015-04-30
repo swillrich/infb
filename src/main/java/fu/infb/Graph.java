@@ -2,9 +2,20 @@ package fu.infb;
 
 import java.util.ArrayList;
 
-public class Graph extends ArrayList<Character> {
+import lombok.Data;
+
+@Data
+public class Graph extends ArrayList<String> {
 
 	private boolean[][] matrix;
+
+	private State[] states;
+
+	@Data
+	public class State {
+		private boolean isDiscovered = false;
+		private boolean isFinished = false;
+	}
 
 	public void initCompleteMatrix() {
 		this.matrix = new boolean[size()][size()];
@@ -17,16 +28,8 @@ public class Graph extends ArrayList<Character> {
 		}
 	}
 
-	public boolean[][] getMatrix() {
-		return matrix;
-	}
-
-	public void setMatrix(boolean[][] matrix) {
-		this.matrix = matrix;
-	}
-
 	public void printMatrix() {
-		Character[] array = toArray(new Character[size()]);
+		String[] array = toArray(new String[size()]);
 		String printOut = "";
 		for (int i = 0; i < array.length; i++) {
 			printOut += array[i] + "  ";
@@ -45,7 +48,15 @@ public class Graph extends ArrayList<Character> {
 	public void inflateAlphabetically(int size) {
 		for (int i = 65; i < 65 + size; i++) {
 			char node = (char) i;
-			add(node);
+			add(String.valueOf(node));
+		}
+		initStates();
+	}
+
+	public void initStates() {
+		states = new State[size()];
+		for (int i = 0 ; i < size(); i++) {
+			states[i] = new State();
 		}
 	}
 

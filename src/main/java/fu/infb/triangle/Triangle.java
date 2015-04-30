@@ -4,18 +4,22 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Triangle {
-	private Character[] nodes = new Character[3];
+	private String[] nodes = new String[3];
 
-	public Character[] getNodes() {
+	public Triangle(String... nodes) {
+		setNodes(nodes);
+	}
+
+	public String[] getNodes() {
 		return nodes;
 	}
 
-	public Triangle(Character... nodes) {
+	public void setNodes(String[] nodes) {
 		this.nodes = nodes;
 	}
 
-	public boolean contains(Character a) {
-		List<Character> list = Arrays.asList(nodes);
+	public boolean contains(String a) {
+		List<String> list = Arrays.asList(nodes);
 		return list.contains(a);
 	}
 
