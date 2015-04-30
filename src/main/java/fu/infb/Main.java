@@ -1,7 +1,6 @@
 package fu.infb;
 
-import fu.infb.alg.BFS;
-import fu.infb.alg.DFS;
+import fu.infb.alg.TopologischeSortierung;
 
 
 public class Main {
@@ -9,8 +8,6 @@ public class Main {
 		CustomGraph g = new CustomGraph();
 		g.printMatrix();
 		System.out.println();
-		DFS.go(g);
-		g.initStates();
-		BFS.go(g);
+		TopologischeSortierung.go(g);
 	}
 }

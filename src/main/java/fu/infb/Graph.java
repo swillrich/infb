@@ -53,9 +53,16 @@ public class Graph extends ArrayList<String> {
 		initStates();
 	}
 
+	public void inflateNumerically(int size) {
+		for (int i = 1; i < size + 1; i++) {
+			add(String.valueOf(i));
+		}
+		initStates();
+	}
+
 	public void initStates() {
 		states = new State[size()];
-		for (int i = 0 ; i < size(); i++) {
+		for (int i = 0; i < size(); i++) {
 			states[i] = new State();
 		}
 	}
