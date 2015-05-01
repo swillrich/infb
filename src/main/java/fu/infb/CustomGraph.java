@@ -6,6 +6,7 @@ public class CustomGraph extends Graph {
 		setMatrix(transform(getCustomMatrix()));
 	}
 
+//	Übung 2, Aufgabe 1
 //	private int[][] getCustomMatrix() {
 //		return new int[][] {
 //				{0, 1, 1, 0, 0, 0, 0},
@@ -18,6 +19,7 @@ public class CustomGraph extends Graph {
 //		};
 //	}
 	
+//	Übung 2, Aufgabe 2
 	private int[][] getCustomMatrix() {
 	return new int[][] {
 			{0, 1, 0, 0, 0, 1, 0, 0},
