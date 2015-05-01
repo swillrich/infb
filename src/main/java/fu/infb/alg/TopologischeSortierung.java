@@ -18,29 +18,31 @@ public class TopologischeSortierung {
 	}
 
 	private void discovered(int i) {
+		System.out.println("discovered " + g.get(i) + " (grey)");
 	}
 
 	private void finished(int i) {
-		this.order.add(i);
+		System.out.println("finished " + g.get(i) + " (black)");
+		this.order.add(g.get(i));
 	}
 
 	private void printOrder() {
-		System.out.println("Order:");
-		for (int i = 0; i < order.size(); i++) {
-			System.out.println((i + 1) + " -> " + g.get(order.get(i)));
+		System.out.println("\nTopological sorting:");
+		for (int i = order.size() - 1; i >= 0; i--) {
+			System.out.println((order.size() - i) + " -> " + order.get(i));
 		}
 	}
 
 	private Graph g;
 	private boolean[][] matrix;
 	private State[] states;
-	private List<Integer> order;
+	private List<String> order;
 
 	public TopologischeSortierung(Graph g) {
 		this.g = g;
 		this.matrix = g.getMatrix();
 		this.states = g.getStates();
-		this.order = new ArrayList<Integer>();
+		this.order = new ArrayList<String>();
 	}
 
 	public void work() {
