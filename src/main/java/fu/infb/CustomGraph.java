@@ -2,10 +2,30 @@ package fu.infb;
 
 public class CustomGraph extends Graph {
 	public CustomGraph() {
-		inflateNumerically(getCustomMatrix().length);
+		inflateAlphabetically(getCustomMatrix().length);
 		setMatrix(transform(getCustomMatrix()));
 	}
 
+//	Totale Senke finden
+	private int[][] getCustomMatrix() {
+		return new int[][] {
+//				 A, B, C, D, E, F, G, H, I, J, K, L
+				{0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1},
+				{0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0},
+				{0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0},
+				{0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0},
+				{1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0},
+				{0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0},
+				{0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0},
+				{0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0},
+				{0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0},
+				{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+				{0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0},
+				{0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0}
+				
+			};
+		}
+	
 //	Übung 2, Aufgabe 1
 //	private int[][] getCustomMatrix() {
 //		return new int[][] {
@@ -20,16 +40,16 @@ public class CustomGraph extends Graph {
 //	}
 	
 //	Übung 2, Aufgabe 2
-	private int[][] getCustomMatrix() {
-	return new int[][] {
-			{0, 1, 0, 0, 0, 1, 0, 0},
-			{0, 0, 0, 1, 1, 0, 0, 0},
-			{0, 1, 0, 0, 1, 0, 0, 0},
-			{0, 0, 0, 0, 1, 0, 0, 0},
-			{0, 0, 0, 0, 0, 0, 0, 0},
-			{0, 0, 0, 1, 0, 0, 1, 0},
-			{0, 0, 0, 1, 1, 0, 0, 1},
-			{0, 0, 1, 0, 1, 0, 0, 0}
-		};
-	}
+//	private int[][] getCustomMatrix() {
+//	return new int[][] {
+//			{0, 1, 0, 0, 0, 1, 0, 0},
+//			{0, 0, 0, 1, 1, 0, 0, 0},
+//			{0, 1, 0, 0, 1, 0, 0, 0},
+//			{0, 0, 0, 0, 1, 0, 0, 0},
+//			{0, 0, 0, 0, 0, 0, 0, 0},
+//			{0, 0, 0, 1, 0, 0, 1, 0},
+//			{0, 0, 0, 1, 1, 0, 0, 1},
+//			{0, 0, 1, 0, 1, 0, 0, 0}
+//		};
+//	}
 }

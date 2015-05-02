@@ -1,13 +1,11 @@
 package fu.infb;
 
-import fu.infb.alg.TopologischeSortierung;
+import fu.infb.alg.TotaleSenke;
 
 
 public class Main {
 	public static void main(String[] args) {
 		CustomGraph g = new CustomGraph();
-		g.printMatrix();
-		System.out.println();
-		TopologischeSortierung.go(g);
+		TotaleSenke.find(g);
 	}
 }
