@@ -33,12 +33,14 @@ public class RomanNotation {
 				SimpleEntry<Integer, String> toCompare = signs.get(i);
 				if (integer >= toCompare.getKey()) {
 					// subtraction rule
-					if (String.valueOf(integer).startsWith("9")) {
+					if (String.valueOf(integer).startsWith("9")
+							&& i < signs.size() - 1) {
 						romanNumber += signs.get(i - 1).getValue()
 								+ signs.get(i + 1).getValue();
 						integer -= signs.get(i + 1).getKey()
 								- signs.get(i - 1).getKey();
-					} else if (String.valueOf(integer).startsWith("4")) {
+					} else if (String.valueOf(integer).startsWith("4")
+							&& i < signs.size() - 1) {
 						romanNumber += signs.get(i).getValue()
 								+ signs.get(i + 1).getValue();
 						integer -= signs.get(i + 1).getKey()
