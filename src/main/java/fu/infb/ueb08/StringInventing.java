@@ -33,7 +33,7 @@ public class StringInventing {
 
 	// Aufgabe b
 	public void invertByString() {
-		executer.start("invertion by string", new Exe() {
+		executer.start("inverting by string", new Exe() {
 
 			public void exe() {
 				char[] strAsChar = StringInventing.this.str.toCharArray();
@@ -50,7 +50,7 @@ public class StringInventing {
 
 	// Aufgabe c
 	public void invertByStringBuilder() {
-		executer.start("invertion by stringbuilder", new Exe() {
+		executer.start("inverting by stringbuilder", new Exe() {
 
 			public void exe() {
 				char[] strAsChar = StringInventing.this.str.toCharArray();
@@ -67,7 +67,7 @@ public class StringInventing {
 
 	// Aufgabe d
 	public void invertByStringBuffer() {
-		executer.start("invertion by stringbuffer", new Exe() {
+		executer.start("inverting by stringbuffer", new Exe() {
 
 			public void exe() {
 				StringBuffer newString = new StringBuffer(
