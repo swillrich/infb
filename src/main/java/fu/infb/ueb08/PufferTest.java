@@ -1,6 +1,19 @@
 package fu.infb.ueb08;
 
-public class StringInventing {
+//Namen Martin Voges, Rico Kötschau, Sven Willrich (UE08)
+public class PufferTest {
+
+	public static void main(String[] args) {
+		try {
+			if (args.length != 1 && Integer.valueOf(args[0]) > 0) {
+				new IllegalArgumentException();
+			}
+			new PufferTest().generateString(Integer.valueOf(args[0]));
+		} catch (Exception e) {
+			new Exception("wrong number of arguments or not an integer", e);
+		}
+	}
+
 	// speichert den generierten String
 	String str;
 	// Objekt zur Ausführung einzelner Tasks inklusive Stopuhr
@@ -23,7 +36,7 @@ public class StringInventing {
 								charCounter = 0;
 							}
 						}
-						StringInventing.this.str = str;
+						PufferTest.this.str = str;
 						System.out.println("generated string: \n" + str);
 
 					}
@@ -36,9 +49,9 @@ public class StringInventing {
 		executer.start("inverting by string", new Exe() {
 
 			public void exe() {
-				char[] strAsChar = StringInventing.this.str.toCharArray();
+				char[] strAsChar = PufferTest.this.str.toCharArray();
 				String newString = new String();
-				//Invertierung durch permantente String-Instanziierung
+				// Invertierung durch permantente String-Instanziierung
 				for (int i = strAsChar.length - 1; i >= 0; i--) {
 					newString += strAsChar[i];
 				}
@@ -53,9 +66,9 @@ public class StringInventing {
 		executer.start("inverting by stringbuilder", new Exe() {
 
 			public void exe() {
-				char[] strAsChar = StringInventing.this.str.toCharArray();
+				char[] strAsChar = PufferTest.this.str.toCharArray();
 				StringBuilder newString = new StringBuilder();
-				//Invertierung per StringBuilder
+				// Invertierung per StringBuilder
 				for (int i = strAsChar.length - 1; i >= 0; i--) {
 					newString.append(strAsChar[i]);
 				}
@@ -70,9 +83,8 @@ public class StringInventing {
 		executer.start("inverting by stringbuffer", new Exe() {
 
 			public void exe() {
-				StringBuffer newString = new StringBuffer(
-						StringInventing.this.str);
-				//Invertierung per Java API
+				StringBuffer newString = new StringBuffer(PufferTest.this.str);
+				// Invertierung per Java API
 				StringBuffer reverse = newString.reverse();
 				System.out.println("string inverting results in: \n"
 						+ reverse.toString());

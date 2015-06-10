@@ -1,9 +1,25 @@
 package fu.infb.ueb08;
 
-public class PartialSum {
+//Namen Martin Voges, Rico Kötschau, Sven Willrich (UE08)
+public class Teilsumme {
+
+	public static void main(String[] args) {
+		try {
+			if (args.length != 1 && Integer.valueOf(args[0]) > 0) {
+				new IllegalArgumentException();
+			}
+			PufferTest sI = new PufferTest();
+			sI.generateString(Integer.valueOf(args[0]));
+			sI.invertByString();
+			sI.invertByStringBuilder();
+			sI.invertByStringBuffer();
+		} catch (Exception e) {
+			new Exception("wrong number of arguments or not an integer", e);
+		}
+	}
 
 	// berechnet die größte Teilsumme für die angegebenen Daten
-	public static int biggestPartialSum(int[] data) {
+	public int biggestPartialSum(int[] data) {
 		// Variablen zur Speicherung des aktuell höchsten Wertes
 		// (biggestPartialSum) und zur Speicherung des Zählers (tmpSum)
 		int biggestPartialSum = 0, tmpSum = 0;

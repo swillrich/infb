@@ -1,8 +1,24 @@
 package fu.infb.ueb08;
 
+//Namen Martin Voges, Rico Kötschau, Sven Willrich (UE08)
 public class Pi {
+
+	public static void main(String[] args) {
+		try {
+			if (args.length != 1 && Integer.valueOf(args[0]) > 0) {
+				new IllegalArgumentException();
+			}
+			double approximiere = new Pi().approximiere(Integer
+					.valueOf(args[0]));
+			System.out.printf("%-15d%-10s%n", Integer.valueOf(args[0]),
+					approximiere);
+		} catch (Exception e) {
+			new Exception("wrong number of arguments or not an integer", e);
+		}
+	}
+
 	// approximiert pi
-	public static double approximiere(int iterations) {
+	public double approximiere(int iterations) {
 		// zählt, wie oft das Ergebnis kleiner/gleich eins war
 		int isBetween = 0;
 		// durchläuft so viele Iterationen, wie angegeben
