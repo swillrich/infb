@@ -1,6 +1,6 @@
 package fu.infb.ueb08;
 
-//Namen Martin Voges, Rico Kötschau, Sven Willrich (UE08)
+//Namen Martin Voges, Rico Koetschau, Sven Willrich (UE08)
 public class Pi {
 
 	public static void main(String[] args) {
@@ -19,11 +19,11 @@ public class Pi {
 
 	// approximiert pi
 	public double approximiere(int iterations) {
-		// zählt, wie oft das Ergebnis kleiner/gleich eins war
+		// zaehlt, wie oft das Ergebnis kleiner/gleich eins war
 		int isBetween = 0;
-		// durchläuft so viele Iterationen, wie angegeben
+		// durchlaeuft so viele Iterationen, wie angegeben
 		for (int i = 0; i < iterations; i++) {
-			// generiert zwei zufällige Zahlen mit drei Nachkommastellen, für
+			// generiert zwei zufaellige Zahlen mit drei Nachkommastellen, fuer
 			// die gilt 0 <= x <= 1
 			double dotx = Math.round(Math.random() * 1000.) / 1000.;
 			double doty = Math.round(Math.random() * 1000.) / 1000.;

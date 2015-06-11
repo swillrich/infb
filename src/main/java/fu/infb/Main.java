@@ -2,7 +2,7 @@ package fu.infb;
 
 import fu.infb.ueb08.Teilsumme;
 import fu.infb.ueb08.Pi;
-import fu.infb.ueb08.PufferTest;
+import fu.infb.ueb08.BufferTest;
 
 public class Main {
 	public static void main(String[] args) {
@@ -27,7 +27,7 @@ public class Main {
 	}
 
 	private static void uebung8aufgabe1() {
-		PufferTest sI = new PufferTest();
+		BufferTest sI = new BufferTest();
 		sI.generateString(200);
 		sI.invertByString();
 		sI.invertByStringBuilder();
