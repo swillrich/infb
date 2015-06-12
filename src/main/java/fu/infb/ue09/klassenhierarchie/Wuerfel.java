@@ -2,16 +2,20 @@ package fu.infb.ue09.klassenhierarchie;
 
 public class Wuerfel extends Geom3D {
 
-	@Override
-	public int volume() {
-		// TODO Auto-generated method stub
-		return 0;
+	private double a;
+
+	public Wuerfel(double a) {
+		this.a = a;
 	}
 
 	@Override
-	public int surfaceArea() {
-		// TODO Auto-generated method stub
-		return 0;
+	public double volume() {
+		return a * a * a;
+	}
+
+	@Override
+	public double surfaceArea() {
+		return a * a * 6;
 	}
 
 }

@@ -2,20 +2,20 @@ package fu.infb.ue09.klassenhierarchie;
 
 public class Kugel extends Geom3D {
 
-	public Kugel() {
-		
-	}
-	
-	@Override
-	public int volume() {
-		// TODO Auto-generated method stub
-		return 0;
+	private double r;
+
+	public Kugel(double r) {
+		this.r = r;
 	}
 
 	@Override
-	public int surfaceArea() {
-		// TODO Auto-generated method stub
-		return 0;
+	public double volume() {
+		return 4 / 3 * Math.PI * r * r * r;
+	}
+
+	@Override
+	public double surfaceArea() {
+		return 4 * Math.PI * r * r;
 	}
 
 }
