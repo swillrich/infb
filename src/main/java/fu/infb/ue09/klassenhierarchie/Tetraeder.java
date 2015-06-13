@@ -1,9 +1,10 @@
 package fu.infb.ue09.klassenhierarchie;
 
+//Namen Martin Voges, Rico Koetschau, Sven Willrich (UE08)
 public class Tetraeder extends Geom3D {
 
 	private double a;
-	
+
 	public Tetraeder(double a) {
 		this.a = a;
 	}

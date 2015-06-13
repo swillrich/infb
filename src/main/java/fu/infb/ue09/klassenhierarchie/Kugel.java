@@ -1,5 +1,6 @@
 package fu.infb.ue09.klassenhierarchie;
 
+//Namen Martin Voges, Rico Koetschau, Sven Willrich (UE08)
 public class Kugel extends Geom3D {
 
 	private double r;

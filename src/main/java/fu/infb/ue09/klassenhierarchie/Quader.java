@@ -1,11 +1,12 @@
 package fu.infb.ue09.klassenhierarchie;
 
+//Namen Martin Voges, Rico Koetschau, Sven Willrich (UE08)
 public class Quader extends Geom3D {
 
 	private double a;
 	private double b;
 	private double c;
-	
+
 	public Quader(double a, double b, double c) {
 		this.a = a;
 		this.b = b;
