@@ -1,12 +1,11 @@
 package fu.infb.ue09.klassenhierarchie;
 
-//Namen Martin Voges, Rico Koetschau, Sven Willrich (UE08)
-//abstrakte Oberklasse mit der Definition von Operationen, 
-//die jede Unterklasse implementieren muss
+//Namen Martin Voges, Rico Koetschau, Sven Willrich (UE09)
+//Abstract class for each geo3d class.
 public abstract class Geom3D {
-	// gibt das Volume jeder Form zurück
+	// give back the volume
 	public abstract double volume();
 
-	// gibt die SurfaceArea, also die Fläche, jeder Form zurück
+	// give back the surface area
 	public abstract double surfaceArea();
 }
