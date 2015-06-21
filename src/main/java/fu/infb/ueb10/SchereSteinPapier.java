@@ -22,7 +22,7 @@ public class SchereSteinPapier {
 	private void go(Player user, Player computer) {
 		// first show how the game works
 		StringBuilder b = new StringBuilder();
-		b.append("Optionen:\n");
+		b.append("Options:\n");
 		b.append("s = schere\n");
 		b.append("t = stein\n");
 		b.append("p = papier\n");
@@ -127,7 +127,7 @@ public class SchereSteinPapier {
 
 		// control the user entry and results in setting currentChoice
 		// if the user input is invalid, currentChoice is null.
-		// the user can also decice to quit the game.
+		// the user can also decide to quit the game.
 		@Override
 		public void play() {
 			System.out.println("Enter your choice:");

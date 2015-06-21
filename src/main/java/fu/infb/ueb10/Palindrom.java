@@ -7,15 +7,18 @@ import java.util.Stack;
 //Namen Martin Voges, Rico Koetschau, Sven Willrich (UE10)
 public class Palindrom {
 	// Starts the program through main method. As input also test data
-	// applicable, even use test() instead of args in for loop
+	// applicable, even use 'sample' instead of args in for loop
 	public static void main(String[] args) {
 		// checks for each array entry whether it is a Palindrom
-		for (String s : test()) {
+		for (String s : args) {
 			System.out.println(s + " ist" + (check(s) ? "" : " kein")
 					+ " Polindrom");
 
 		}
 	}
+
+	private static final String[] sample = new String[] { "Lagerregal",
+			"helloworld", "isPolindrom", "Otto", "Rotor" };
 
 	// checks for the test input whether the given input is a Polindrom
 	private static boolean check(String s) {
@@ -50,11 +53,5 @@ public class Palindrom {
 			}
 		}
 		return true;
-	}
-
-	// sample
-	private static String[] test() {
-		return new String[] { "Lagerregal", "helloworld", "isPolindrom",
-				"Otto", "Rotor" };
 	}
 }
