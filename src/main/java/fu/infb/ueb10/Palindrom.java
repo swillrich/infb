@@ -9,7 +9,7 @@ public class Palindrom {
 	// Starts the program through main method. As input also test data
 	// applicable, even use test() instead of args in for loop
 	public static void main(String[] args) {
-		// checks for each array entry whether it is a Polindrom
+		// checks for each array entry whether it is a Palindrom
 		for (String s : test()) {
 			System.out.println(s + " ist" + (check(s) ? "" : " kein")
 					+ " Polindrom");
@@ -40,7 +40,7 @@ public class Palindrom {
 				}
 				// in the second step, retrieve elements of stack step-by-step
 				// and compare with the remaining queue elements. If there occur
-				// differences, the string could could be a Palindrom
+				// differences, the string could not be a Palindrom
 			} else {
 				char first = queue.poll();
 				char second = stack.pop();
