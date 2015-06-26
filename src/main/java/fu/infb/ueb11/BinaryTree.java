@@ -1,5 +1,8 @@
 package fu.infb.ueb11;
 
+/**
+ * Namen Martin Voges, Rico Koetschau, Sven Willrich (UE10)
+ */
 @SuppressWarnings("unchecked")
 public class BinaryTree<E extends Comparable<E>> {
 	private BinaryNode<E>[] nodes;
@@ -19,7 +22,7 @@ public class BinaryTree<E extends Comparable<E>> {
 	}
 
 	/**
-	 * This methods adds a new value considering the correct order.
+	 * This method adds a new value considering the correct order.
 	 */
 	public void add(E value) {
 
@@ -64,7 +67,7 @@ public class BinaryTree<E extends Comparable<E>> {
 		int tmpLastPos = this.lastPos + 1;
 		if (tmpLastPos * 2 >= this.nodes.length) {
 			newArr = new BinaryNode[(this.nodes.length + 1) * 2 - 1];
-		} else if (tmpLastPos < ((this.nodes.length + 1) / 2) - 1) {
+		} else if (tmpLastPos * 2 < ((this.nodes.length + 1) / 2) - 1) {
 			newArr = new BinaryNode[(int) (((this.nodes.length + 1) / 2) - 1)];
 		}
 
@@ -98,7 +101,12 @@ public class BinaryTree<E extends Comparable<E>> {
 		System.out.println(title);
 		System.out.println(underLine);
 		for (int pos = 0; pos <= lastPos; pos++) {
-			BinaryNode<E> node = this.nodes[pos];
+			BinaryNode<E> node;
+			if (pos >= this.nodes.length) {
+				node = null;
+			} else {
+				node = this.nodes[pos];
+			}
 			if (node == null) {
 				columns[1] = "";
 				columns[2] = "";

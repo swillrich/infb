@@ -1,5 +1,8 @@
 package fu.infb.ueb11;
 
+/**
+ * Namen Martin Voges, Rico Koetschau, Sven Willrich (UE10)
+ */
 public class BinaryNode<E> {
 	private E value;
 	private int rightChild = -1;
